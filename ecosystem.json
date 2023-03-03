@@ -1,0 +1,20 @@
+{
+  "apps": [{
+      "name": "xmbb-node-server",
+      "script": "./bootstrap.js",
+      "node_args": "--harmony"
+  }],
+  "deploy": {
+      "online": {
+          "user": "root",
+          "host": "121.196.178.118",
+          "ref": "origin/master",
+          "repo": "git@github.com:Hrero/xmbb-node-server.git",
+          "path": "/home/node-service/xmbb-node-server",
+          "post-deploy": "bash /home/node-service/xmbb-node-server/current/deploy.sh",
+          "env": {
+              "NODE_ENV": "production"
+          }
+      }
+  }
+}
